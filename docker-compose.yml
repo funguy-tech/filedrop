@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  oneway-drop:
+    build: .
+    ports:
+      - "${PORT}:80"
+    volumes:
+      - ${UPLOAD_HOST_DIR:-./uploads}:/uploads
+    environment:
+      - UPLOAD_DIR=/uploads
+      - DEBUG=False
